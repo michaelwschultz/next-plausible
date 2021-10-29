@@ -12,6 +12,7 @@ export default function PlausibleProvider(props: {
   domain: string
   customDomain?: string
   children: ReactNode | ReactNode[]
+  manual?: boolean
   trackLocalhost?: boolean
   trackOutboundLinks?: boolean
   exclude?: string

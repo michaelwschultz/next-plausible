@@ -116,6 +116,10 @@ function withPlausibleProxy(options = {}) {
               destination: getRemoteScript('local'),
             },
             {
+              source: getScriptPath(options, 'manual'),
+              destination: getRemoteScript('manual'),
+            },
+            {
               source: getScriptPath(options, 'exclusions'),
               destination: getRemoteScript('exclusions'),
             },
@@ -185,6 +189,7 @@ function PlausibleProvider(props) {
                       : getRemoteScriptName(domain, props.selfHosted),
                   }),
                   props.trackLocalhost ? 'local' : null,
+                  props.manual ? 'manual' : null,
                   props.trackOutboundLinks ? 'outbound-links' : null,
                   props.exclude ? 'exclusions' : null
                 ),
